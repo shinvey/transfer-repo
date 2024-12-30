@@ -1,26 +1,45 @@
 # Repository transfer cli tool
 
-Help you transfer all repositories from gitlab to github
+Help you transfer all repositories from gitlab to github.
 
-## Preparation
+## Prerequisites
+
+### On windows os
 
 ```shell
 # https://github.com/hickford/git-credential-oauth
 winget install hickford.git-credential-oauth
+git credential-oauth configure
 
-scoop install glab
+winget install GLab.GLab
 glab auth login
 
-scoop install gh
+winget install GitHub.cli
 gh auth login
 
-scoop install deno
+winget install DenoLand.Deno
 ```
 
-## Usage
+### On macos
 
-executes script file in bash
+```bash
+brew install git-credential-oauth
+git credential-oauth configure
 
-```shell
+brew install glab
+glab auth login
+
+brew install gh
+gh auth login
+
+brew install deno
+```
+
+## Usages
+
+Executes script file in bash. You may use `git bash` on windows.
+
+```bash
+chmod +x ./transfer-repo.ts
 ./transfer-repo.ts --create-repo
 ```
